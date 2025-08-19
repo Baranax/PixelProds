@@ -1,7 +1,7 @@
 (function ($) {
   "use strict";
 
-  /* on scroll count */
+  
   var a = 0;
   $(window).scroll(function () {
     var oTop = $('#counter').offset().top - window.innerHeight;
@@ -26,7 +26,7 @@
     }
   });
 
-  /* Button hover effect */
+  
   document.querySelectorAll('.button').forEach(button => {
     button.onmousemove = function (e) {
       var rect = e.target.getBoundingClientRect();
@@ -52,7 +52,7 @@
   $(document).ready(function () {
     initPreloader();
 
-    // Isotope Initialization
+    
     var $container = $('.isotope-container');
     if ($container.length) {
       $container.isotope({
@@ -61,7 +61,7 @@
       });
     }
 
-    // Chocolat Lightbox Init
+    
     if ($('.image-link').length) {
       Chocolat(document.querySelectorAll('.image-link'), {
         imageSize: 'contain',
@@ -69,7 +69,7 @@
       });
     }
 
-    // Search Popup
+    
     $('#header-nav').on('click', '.search-button', function () {
       $('.search-popup').toggleClass('is-visible');
     });
@@ -80,13 +80,13 @@
       if (e.which === 27) $('.search-popup').removeClass('is-visible');
     });
 
-    // Animate On Scroll (AOS) Init
+    
     AOS.init({
       duration: 2000,
       once: true,
     });
 
-    // Swiper Slider Init
+    
     if ($('.testimonial-swiper').length) {
       new Swiper('.testimonial-swiper', {
         slidesPerView: 1,
@@ -95,7 +95,7 @@
       });
     }
 
-    // Filter Buttons Active State & Filtering
+    
     $('.filter-button').click(function () {
       $('.filter-button').removeClass('active');
       $(this).addClass('active');
@@ -103,7 +103,7 @@
       var filterValue = $(this).attr('data-filter');
       $container.isotope({ filter: filterValue === '*' ? '*' : filterValue });
 
-      // Reinitialize AOS after filtering
+      
       AOS.refresh();
     });
 
